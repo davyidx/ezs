@@ -1,7 +1,7 @@
 [Unit]
 Description=ezs
-After=getty@tty1.service
-Requires=getty@tty1.service
+After=multi-user.target
+Requires=multi-user.target
 
 [Service]
 User=%i
@@ -12,5 +12,5 @@ TTYPath=/dev/tty1
 Restart=always
 
 [Install]
-WantedBy=graphical.target
+WantedBy=default.target
 Alias=display-manager.service
