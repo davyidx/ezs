@@ -1,15 +1,13 @@
 [Unit]
 Description=eazy sessions session/display manager
-After=systemd-user-sessions.service plymouth-quit-wait.service
 After=getty@tty1.service
 
 [Service]
-Type=idle
+Type=simple
 ExecStart=/usr/bin/ezs
 StandardInput=tty
 TTYPath=/dev/tty1
-TTYReset=yes
-TTYVHangup=yes
 
 [Install]
 Alias=display-manager.service
+WantedBy=multi-user.target
