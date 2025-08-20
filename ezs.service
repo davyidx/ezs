@@ -1,11 +1,11 @@
 [Unit]
-Description=emptty display manager
-After=systemd-user-sessions.service plymouth-quit-wait.service
+Description=ezs
 After=getty@tty1.service
 
 [Service]
-ExecStart=/usr/bin/ezs > /dev/tty1 2>&1
+ExecStart=/usr/bin/ezs-dm
 StandardInput=tty
+StandardOutput=tty
 TTYPath=/dev/tty1
 TTYReset=yes
 TTYVHangup=yes
