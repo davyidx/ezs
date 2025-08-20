@@ -1,16 +1,15 @@
 [Unit]
 Description=emptty display manager
-After=systemd-user-sessions.service
+After=systemd-user-sessions.service plymouth-quit-wait.service
+After=getty@tty1.service
 
 [Service]
-Type=idle
 ExecStart=/usr/bin/ezs
-Restart=always
+StandardInput=tty
 TTYPath=/dev/tty1
 TTYReset=yes
-KillMode=process
-IgnoreSIGPIPE=no
-SendSIGHUP=yes
+TTYVHangup=yes
+Type=idle
 
 [Install]
 Alias=display-manager.service
