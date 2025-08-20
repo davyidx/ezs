@@ -2,12 +2,13 @@
 
 # Variables
 BIN_FILE="ezs"
-SHARE_DIR="/usr/share/ezs/"
+SHARE_DIR="/usr/share/.ezs/"
 SHARE_FILE1=".default_cursor"
 SHARE_FILE2=".default_session"
 SERVICE_FILE="ezs.service"
 
 if [ ! -d "$SHARE_DIR" ]; then
+    echo -e "created directory \".ezs\" under /usr/share"
     sudo mkdir -p "$SHARE_DIR"
 fi
 
@@ -23,4 +24,4 @@ sudo systemctl daemon-reload
 
 sudo systemctl enable "$SERVICE_FILE"
 
-echo "Completed."
+echo "completed"

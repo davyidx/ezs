@@ -1,6 +1,6 @@
 #!/usr/bin/env lua
 
-local path = "/home/davyidx/lua/dm/"
+local path = "/usr/share/.ezs"
 
 -- popexec function
 local function popexec(str)
