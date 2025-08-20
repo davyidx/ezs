@@ -16,7 +16,7 @@ Designed with simplicity and efficiency in mind, **ezs** is written in **Lua**. 
 
 ## Dependencies
 
-- **Lua 5.2** or newer
+- **Lua5.2** or newer
 
 ## Installation
 
