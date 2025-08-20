@@ -166,7 +166,8 @@ if input == "" then
         isdefault = true
         if sessions[cursor][3] == "x" then
             -- enters
-            os.execute('startx '..sessions[cursor][2])
+            os.execute('/usr/bin/X :0 vt1')
+            os.execute(sessions[cursor][2])
         else
             -- enters
             os.execute(sessions[cursor][2])

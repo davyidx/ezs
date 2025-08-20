@@ -1,15 +1,18 @@
 [Unit]
 Description=ezs
 After=getty@tty1.service
+Requires=getty@tty1.service
 
 [Service]
+User=%i
+Type=simple
 ExecStart=/usr/bin/ezs-dm
 StandardInput=tty
 StandardOutput=tty
 TTYPath=/dev/tty1
-TTYReset=yes
-TTYVHangup=yes
-Type=idle
+Environment=DISPLAY=:0
+Restart=always
 
 [Install]
+WantedBy=graphical.target
 Alias=display-manager.service
