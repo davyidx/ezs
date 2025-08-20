@@ -73,8 +73,8 @@ sudo cp "$SHARE_FILE2" "$SHARE_DIR/"
 sudo chmod 666 "$SHARE_DIR/$SHARE_FILE2"
 
 # Copy the service file
-echo "Copying service file: $SERVICE_FILE to /etc/systemd/system/"
-sudo cp "$SERVICE_FILE" /etc/systemd/system/
+echo "Copying service file: $SERVICE_FILE to /usr/lib/systemd/system/"
+sudo cp "$SERVICE_FILE" /usr/lib/systemd/system/
 
 # Reload the systemd daemon
 echo "Reloading systemd daemon"

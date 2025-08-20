@@ -1,11 +1,16 @@
 [Unit]
-Description=eazy sessions session/display manager
-After=graphical.target
+Description=emptty display manager
+After=systemd-user-sessions.service
 
 [Service]
+Type=idle
 ExecStart=/usr/bin/ezs
-TTyPath=/dev/tty1
+Restart=always
+TTYPath=/dev/tty1
+TTYReset=yes
+KillMode=process
+IgnoreSIGPIPE=no
+SendSIGHUP=yes
 
 [Install]
 Alias=display-manager.service
-WantedBy=multi-user.target

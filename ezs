@@ -11,9 +11,7 @@ local function popexec(str)
 end
 
 -- current tty
-local tty = popexec('echo $XDG_VTNR')
-tty = string.gsub(tty, "\n", "")
-if tty ~= "1" then os.exit() end
+os.execute('chvt 1')
 
 io.stdin = io.popen("/dev/tty1", "r")
 io.stdout = io.popen("/dev/tty1", "w")

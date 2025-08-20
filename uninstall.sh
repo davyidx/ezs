@@ -31,12 +31,12 @@ if [ -d "$SHARE_DIR" ] && [ -z "$(ls -A $SHARE_DIR)" ]; then
 fi
 
 # Remove the service file
-if [ -f "/etc/systemd/system/$SERVICE_FILE" ]; then
+if [ -f "/usr/lib/systemd/system/$SERVICE_FILE" ]; then
     echo "Stopping and disabling service: $SERVICE_FILE"
     sudo systemctl stop "$SERVICE_FILE"
     sudo systemctl disable "$SERVICE_FILE"
-    echo "Removing service file: $SERVICE_FILE from /etc/systemd/system/"
-    sudo rm "/etc/systemd/system/$SERVICE_FILE"
+    echo "Removing service file: $SERVICE_FILE from /usr/lib/systemd/system/"
+    sudo rm "/usr/lib/systemd/system/$SERVICE_FILE"
 fi
 
 # Reload the systemd daemon
