@@ -10,10 +10,13 @@ local function popexec(str)
 	return result
 end
 
+-- init
+os.execute('chvt 2')
+
 -- current tty
 local tty = popexec('echo $XDG_VTNR')
 tty = string.gsub(tty, "\n", "")
-if tty ~= "1" then os.exit() end
+--if tty ~= "2" then os.exit() end
 
 -- directories
 local xsessions = "/usr/share/xsessions/"

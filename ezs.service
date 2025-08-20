@@ -4,8 +4,6 @@ After=graphical.target
 
 [Service]
 ExecStart=/usr/bin/ezs
-StandardInput=tty
-TTYPath=/dev/tty1
 
 [Install]
 Alias=display-manager.service
