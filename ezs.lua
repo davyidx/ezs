@@ -166,8 +166,7 @@ if input == "" then
         isdefault = true
         if sessions[cursor][3] == "x" then
             -- enters
-            os.execute('/usr/bin/X :0 vt1')
-            os.execute(sessions[cursor][2])
+            os.execute('X :0 vt1 & DISPLAY=:0 '..sessions[cursor][2])
         else
             -- enters
             os.execute(sessions[cursor][2])

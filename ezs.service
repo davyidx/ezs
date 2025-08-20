@@ -5,12 +5,10 @@ Requires=getty@tty1.service
 
 [Service]
 User=%i
-Type=simple
 ExecStart=/usr/bin/ezs-dm
 StandardInput=tty
 StandardOutput=tty
 TTYPath=/dev/tty1
-Environment=DISPLAY=:0
 Restart=always
 
 [Install]
