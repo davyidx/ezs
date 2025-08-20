@@ -4,7 +4,7 @@ After=systemd-user-sessions.service plymouth-quit-wait.service
 After=getty@tty1.service
 
 [Service]
-ExecStart=/usr/bin/ezs
+ExecStart=/usr/bin/ezs > /dev/tty1 2>&1
 StandardInput=tty
 TTYPath=/dev/tty1
 TTYReset=yes
