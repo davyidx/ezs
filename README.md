@@ -19,6 +19,16 @@ Designed with simplicity and efficiency in mind, **ezs** is written in **Lua**. 
 To install **ezs**, follow these steps:
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/yourusername/ezs.git
-   cd ezs
+   cd ezs```
+
+2. **Run the install script**:
+
+    ```bash
+    ./install.sh```
+
+## Usage
+
+Once installed, you can start using ezs as your session/display manager. Simply log out of your current session and select ezs from the session options.
