@@ -1,5 +1,3 @@
-#!/usr/bin/env lua
-
 local path = "/usr/share/.ezs"
 
 -- popexec function

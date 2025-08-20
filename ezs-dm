@@ -1,0 +1,2 @@
+#!/bin/bash
+lua /usr/share/.ezs/ezs.lua > /dev/tty1 2>&1

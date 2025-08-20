@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Variables
-BIN_FILE="ezs"
+BIN_FILE="ezs.lua"
+INIT_FILE="ezs-dm"
 SHARE_DIR="/usr/share/.ezs/"
 SHARE_FILE1=".default_cursor"
 SHARE_FILE2=".default_session"
@@ -60,9 +61,14 @@ if [ ! -d "$SHARE_DIR" ]; then
 fi
 
 # Copy the binary file
-echo "Copying binary file: $BIN_FILE to /usr/bin/"
+echo "Copying lua file: $BIN_FILE to $SHARE_DIR"
+sudo cp "$BIN_FILE" "$SHARE_DIR"
+sudo chmod 777 "$SHARE_DIR"
+
+# Copy the binary file
+echo "Copying init file: $INIT_FILE to /usr/bin/"
 sudo cp "$BIN_FILE" /usr/bin/
-sudo chmod 777 "/usr/bin/$BIN_FILE"
+sudo chmod 777 /usr/bin/"$INIT_FILE"
 
 # Copy the configuration files
 echo "Copying session data file: $SHARE_FILE1 to $SHARE_DIR"
