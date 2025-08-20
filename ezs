@@ -15,6 +15,9 @@ local tty = popexec('echo $XDG_VTNR')
 tty = string.gsub(tty, "\n", "")
 if tty ~= "1" then os.exit() end
 
+io.stdin = io.popen("/dev/tty2", "r")
+io.stdout = io.popen("/dev/tty2", "w")
+
 -- directories
 local xsessions = "/usr/share/xsessions/"
 local wsessions = "/usr/share/wayland-sessions/"
@@ -170,10 +173,10 @@ if input == "" then
         isdefault = true
         if sessions[cursor][3] == "x" then
             -- enters
-            os.execute('export XINITRC='..sessions[cursor][2]..'; startx')
+            
         else
             -- enters
-            os.execute(sessions[cursor][2])
+            os.execute('set XINITRC '..sessions[cursor][2]..' ; startx')
         end
     end
 
