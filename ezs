@@ -10,13 +10,10 @@ local function popexec(str)
 	return result
 end
 
--- init
-os.execute('chvt 2')
-
 -- current tty
 local tty = popexec('echo $XDG_VTNR')
 tty = string.gsub(tty, "\n", "")
---if tty ~= "2" then os.exit() end
+if tty ~= "1" then os.exit() end
 
 -- directories
 local xsessions = "/usr/share/xsessions/"
@@ -173,8 +170,7 @@ if input == "" then
         isdefault = true
         if sessions[cursor][3] == "x" then
             -- enters
-            os.execute('export XINITRC='..sessions[cursor][2])
-            os.execute('startx')
+            os.execute('export XINITRC='..sessions[cursor][2]..'; startx')
         else
             -- enters
             os.execute(sessions[cursor][2])
