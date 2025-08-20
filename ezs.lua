@@ -8,10 +8,6 @@ local function popexec(str)
 	return result
 end
 
--- tty1
-local tty = popexec('echo $XDG_VTNR')
-if tty ~= "1" then os.exit() end
-
 io.stdin = io.popen("/dev/tty1", "r")
 io.stdout = io.popen("/dev/tty1", "w")
 
