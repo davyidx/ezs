@@ -4,7 +4,6 @@ After=multi-user.target
 Requires=multi-user.target
 
 [Service]
-User=%i
 ExecStart=/usr/bin/ezs-dm
 StandardInput=tty
 StandardOutput=tty
