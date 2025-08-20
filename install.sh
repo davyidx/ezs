@@ -67,8 +67,10 @@ sudo chmod +x "/usr/bin/$BIN_FILE"
 # Copy the configuration files
 echo "Copying session data file: $SHARE_FILE1 to $SHARE_DIR"
 sudo cp "$SHARE_FILE1" "$SHARE_DIR/"
+sudo chmod 666 "$SHARE_DIR/$SHARE_FILE1"
 echo "Copying session data file: $SHARE_FILE2 to $SHARE_DIR"
 sudo cp "$SHARE_FILE2" "$SHARE_DIR/"
+sudo chmod 666 "$SHARE_DIR/$SHARE_FILE2"
 
 # Copy the service file
 echo "Copying service file: $SERVICE_FILE to /etc/systemd/system/"
