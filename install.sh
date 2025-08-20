@@ -67,8 +67,8 @@ sudo chmod 777 "$SHARE_DIR"
 
 # Copy the binary file
 echo "Copying init file: $INIT_FILE to /usr/bin/"
-sudo cp "$BIN_FILE" /usr/bin/
-sudo chmod 777 /usr/bin/"$INIT_FILE"
+sudo cp "$INIT_FILE" /usr/bin/
+sudo chmod +x /usr/bin/"$INIT_FILE"
 
 # Copy the configuration files
 echo "Copying session data file: $SHARE_FILE1 to $SHARE_DIR"
