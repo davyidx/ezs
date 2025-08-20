@@ -1,0 +1,13 @@
+[Unit]
+Description=eazy sessions session/display manager
+After=getty.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ezs
+User=all
+Group=all
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
